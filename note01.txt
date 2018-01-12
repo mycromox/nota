@@ -1,0 +1,119 @@
+1) to combine 2 matrixs ((1x4) x (1x4)) = (4x2)
+
+[2, 2, 6, 2, 9, 7]
+[79, 75, 85, 76, 89, 76]
+to become
+[[ 2 79]
+ [ 2 75]
+ [ 6 85]
+ [ 2 76]
+ [ 9 89]
+ [ 7 76]]
+
+-- >
+
+import numpy as np
+store = np.array([2, 2, 6, 2, 9, 7])
+cost  = np.array([79, 75, 85, 76, 89, 76])
+np_cols = np.column_stack((store, cost))
+print(np_cols)
+
+2) print from ? to ? ( remember -- ?+1 ) :
+
+x = [2, 5, 18, 18, 19, 9]
+print(x[0:3])
+
+3) same with (1) but now to make it (2x4) matrix
+
+import numpy as np
+x = np.array([23, 18, 2, 2])
+y = np.array([16, 12, 14, 16])
+z = np.row_stack([x, y])
+print(z.shape)
+
+z.shape -- to display matrix format
+
+4) change matrix value :
+
+script
+------
+foo = [0, 5.22, "A", "Tue", 1.2]
+foo[3:5] = ["E", "F"]
+print(foo)
+
+output
+------
+[0, 5.22, 'A', 'E', 'F']
+
+5) change dictionary value
+
+script
+------
+rotation_period = {'earth': 1, 'mercury': 58.8, 'venus': 244}
+rotation_period['venus'] = -244
+print(rotation_period)
+
+output
+------
+{'earth': 1, 'venus': -244, 'mercury': 58.8}
+
+6) numpy
+
+Following is a preview of the DataFrame sales:
+
+product   month     sold
+A           Jan       85
+A           Feb       200
+A           Mar       180
+B           Jan       90
+B           Feb       80
+B           Mar       130
+
+OUTPUT
+------
+  product month  sold
+0       A   Jan    85
+
+script
+------
+import numpy as np
+sales[np.logical_and(sales['product'] == 'A', sales['sold'] < 100)]
+
+7) numpy 2
+
+Following is a preview of the DataFrame products:
+
+  device  price store
+0      X    250     A
+1      Y    200     A
+2      Z    300     B
+3      X    275     B
+4      Y    250     C
+5      Z    350     C
+
+output
+------
+ device  price store
+0      X    250     A
+1      Y    200     A
+
+script
+------
+products[products['store'] == 'A']
+
+8) normal dictionary
+
+SCRIPT
+------
+fruits = {
+    'apples': {'cost': 3, 'units': 100},
+    'bananas': {'cost': 1, 'units': 80},
+    'grapes': {'cost': 5, 'units': 500}
+}
+print(fruits['apples'])
+
+output
+------
+{'units': 100, 'cost': 3}
+
+9)
