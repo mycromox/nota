@@ -1,0 +1,15 @@
+1) lambda example 2 :
+
+x = ['cry', 'myth', 'authentication', 'consequential']
+count_vowel = list(map(lambda word: word.count('o'), x))
+print(count_vowel)
+
+output
+------
+[0, 0, 1, 1]
+
+2) Within the function definition, the parameter **kwargs is turned into a ___.
+
+-- > dictionary
+
+3)
