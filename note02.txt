@@ -1,0 +1,155 @@
+1) lambda
+
+script
+------
+from functools import reduce
+product = [10, 3, 1]
+result = reduce(lambda x, y: x * y, product)
+
+print(result)
+
+output
+------
+30
+
+2) one line function
+
+script
+------
+floats = [4.51, 8.87, 7.66, 5.63]
+integers = [int(x) for x in floats ]
+
+print(integers)
+
+output
+------
+[4, 8, 7, 5]
+
+3) enumerate
+
+script
+------
+names = ['Thor Odinson', 'Steve Rogers']
+
+avengers = list(enumerate(names, start = 2))
+print(avengers)
+
+output
+------
+[(2, 'Thor Odinson'), (3, 'Steve Rogers')]
+
+4) zip function
+
+script
+------
+characters_names = ['Felicity Smoak', 'Laurel Lance']
+code_names = ['Overwatch', 'Black Canary']
+
+team_arrow = zip(characters_names, code_names)
+for x, y in team_arrow:
+    print( y + ': ' + x)
+
+
+output
+------
+Overwatch: Felicity Smoak
+Black Canary: Laurel Lance
+
+5) DataFrame using loc
+
+Following is a preview of the DataFrame cricket_wc_venues.
+
+    year         host      continent     winner
+a   2003        Kenya         Africa  Australia
+b   2007  West Indies  North America  Australia
+c   2011   Bangladesh           Asia      India
+d   2015    Australia      Australia  Australia
+
+script
+------
+print(cricket_wc_venues.loc[['c'], 'year'])
+
+output
+------
+c    2011
+Name: year, dtype: int64
+
+6)  using iterrows
+
+Following is a preview of the DataFrame df:
+
+     P    Q
+a     5   20
+b     3   15
+
+script
+------
+for i, y in df.iterrows():
+    print(i + ': ' + str(y['P']))
+
+output
+------
+a: 5
+b: 3
+
+7) dictionary to keys
+
+script
+------
+fruits = {
+    'oranges': 150,
+    'dates': 100,
+    'figs': 180
+}
+print(fruits.keys())
+
+output
+------
+dict_keys(['oranges', 'figs', 'dates'])
+
+8) Histogram
+
+Assuming matplotlib.pyplot is imported as plt, which of the following commands adds the text "Histogram" at the location (x, y) = (25, 50) to the current plot?
+
+plt.text(25, 50, text = 'Histogram')
+
+9) DataFrame using iloc
+
+Following is a preview of the DataFrame marketing
+
+   ID  Views  Clicks
+a   1   1000     300
+b   2   1200     800
+c   3    800     500
+d   4   1500     990
+
+script
+------
+print(marketing.iloc[[0, 2]])
+
+output
+------
+   ID  Views  Clicks
+a   1   1000     300
+c   3    800     500
+
+10) change default index (i.e number) to other name
+
+DataFrame df:
+
+  product profit
+0  apples     20
+1  apples     10
+
+script
+------
+df.index = ['jan', 'feb']
+print(df)
+
+output
+------
+    product profit
+jan  apples     20
+feb  apples     10
+
+11)
